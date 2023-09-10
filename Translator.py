@@ -7,7 +7,7 @@ import pyttsx3
 r = sr.Recognizer()
 translator = google_translator()
 tts = pyttsx3.init()
-#language = 'en';
+
 language = input("Enter language to translate to, en for English and es for Spanish    ")
 while True:
     #aquire text from audio
@@ -27,9 +27,7 @@ while True:
             print(translated_text)
             tts.say(translated_text)
             tts.runAndWait()
-            #generate file with text translation and generate audio mp3 file
-            #voice = gTTS(translated_text,lang='en')
-            #voice.save("translatedAudio.mp3")
+            
         except sr.UnknownValueError:
             print("Could not process/understand audio")
         except sr.RequestError:
